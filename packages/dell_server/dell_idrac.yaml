@@ -180,6 +180,30 @@ template: # https://www.home-assistant.io/integrations/template/#state-based-tem
         device_class: power #Power, watts. Not "Energy" i.e. Wh.
         state_class: measurement
 
+     - name: "PSU 1 Voltage"
+        state: "{{states('sensor.RawDellServerPSU1Voltage')}}"
+        unit_of_measurement: V
+        device_class: power
+        state_class: measurement
+
+      - name: "PSU 2 Voltage"
+        state: "{{states('sensor.RawDellServerPSU2Voltage')}}"
+        unit_of_measurement: V
+        device_class: power .
+        state_class: measurement
+
+      - name: "PSU 1 Current"
+        state: "{{states('sensor.RawDellServerPSU1Current')}}"
+        unit_of_measurement: A
+        device_class: power
+        state_class: measurement
+
+      - name: "PSU 2 Current"
+        state: "{{states('sensor.RawDellServerPSU2Current')}}"
+        unit_of_measurement: A
+        device_class: power 
+        state_class: measurement
+
       - name: "Server Inlet Temperature"
         state: "{{states('sensor.RawDellServerInletTemperature')}}"
         unit_of_measurement: °C
